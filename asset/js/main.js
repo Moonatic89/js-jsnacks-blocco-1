@@ -33,9 +33,9 @@ if (selector == 1) {
 } else if (selector == 4) {
     searchNameInList();
 } else if (selector == 5) {
-    //game 5
+    arrayOfOdds();
 } else if (selector == 6) {
-    //game 6
+    powerCube();
 } else if (selector == 7) {
     //game 7
 } else if (selector == 8) {
@@ -86,10 +86,10 @@ function longerWords() {
 //Game 3: The software asks for 10 numbers, then outputs the sum.
 
 function sumOfTen() {
-    let numbersToSum = 0;
+
     let sum = 0;
     for (let i = 0; i < 10; i++) {
-        numbersToSum = parseInt(prompt(`Insert a number to sum
+        const numbersToSum = (prompt(`Insert a number to sum
         [${i + 1}] of 10] `));
         sum += numbersToSum;
         htmlElement.innerHTML = `The sum of all the numbers is ${sum}!`
@@ -114,7 +114,30 @@ function searchNameInList() {
 
 //Game 5: Create an empty array, ask the user for 6 numbers, if it's odd add it to the array.
 
+function arrayOfOdds() {
+
+    const oddNumbers = [];
+
+    for (let i = 0; i < 6; i++) {
+
+        const numberToCheck = (prompt(`Insert a number to add to the even Array
+        [${i + 1}] of 6] `));
+
+        if (!(numberToCheck % 2 === 0)) {
+            oddNumbers.push(numberToCheck);
+        }
+    }
+
+    htmlElement.innerHTML = oddNumbers;
+}
+
 //Game 6: Asks for a N number, the outputs the cube of the first N numbers.
+
+function powerCube() {
+
+    const nNumber = prompt("Type a number: I will print the cube of every number from 1 to the one of your choice.")
+
+}
 
 //Game 7: Outputs power of 2 until 1000.
 
