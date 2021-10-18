@@ -5,8 +5,9 @@
 
 let securityCheck = false;
 let warning;
+let htmlElement = document.querySelector(".container");
 let selector = prompt(`Hi! Which "game" do you want to play? 
-                     [Select a number from 1 to 9]`);
+[Select a number from 1 to 9]`);
 
 // #endregion
 
@@ -25,7 +26,7 @@ while (securityCheck != true) {
 
 
 if (selector == 1) {
-    //game 1
+    higherNumbers(); 1
 } else if (selector == 2) {
     // game 2
 } else if (selector == 3) {
@@ -50,8 +51,19 @@ if (selector == 1) {
 
 function higherNumbers() {
 
-}
+    const highNumber1 = prompt(`Type a number 
+                          [1/2]`);
+    const highNumber2 = prompt(`Type a second number 
+                          [2/2]`);
 
+    if (highNumber1 > highNumber2) {
+        htmlElement.innerHTML = `${highNumber1}(1st number) is higher than ${highNumber2}(2nd number)`
+    } else if (highNumber1 < highNumber2) {
+        htmlElement.innerHTML = `${highNumber2}(2nd number) is higher than ${highNumber1}(1st number)`
+    } else {
+        htmlElement.innerHTML = `${highNumber1}(1st number) and ${highNumber2}(2nd number) are equal!`
+    }
+}
 
 
 
