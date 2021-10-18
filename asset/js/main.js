@@ -41,7 +41,7 @@ if (selector == 1) {
 } else if (selector == 8) {
     fourDigitSum();
 } else if (selector == 9) {
-    //game 9
+    tenSumAndAverage();
 }
 
 
@@ -166,7 +166,7 @@ function powerToThousand() {
         }
     }
 
-    htmlElement.innerHTML = powerNumbers;
+    htmlElement.innerHTML = `Here is the list of numbers which are suare power of 2 and lesser than 1000:${powerNumbers}`;
 
 }
 
@@ -180,10 +180,25 @@ function fourDigitSum() {
         digitSum += parseInt(fourDigit[i]);
 
     }
-    htmlElement.innerHTML = digitSum;
+    htmlElement.innerHTML = `The sum of the single digits you wrote is ${digitSum}`;
 }
 
 //Game 9: outputs the sum and the average of the first 10 numbers.
+
+function tenSumAndAverage() {
+
+    let sum = 0;
+
+    for (let i = 0; i < 10; i++) {
+
+        sum += (i + 1);
+
+    }
+    let average = (sum / 10);
+    htmlElement.innerHTML = ` The sum of the first 10 numbers is ${sum}, and their average is ${average}.`;
+}
+
+
 
 
 
@@ -195,10 +210,9 @@ function checkForCorrectInput() {
 
     if (isNaN(selector)) {
         message = "You're really funny! Now, please type a NUMBER between 1 and 9.";
-    } else if (selector > 9) {
+    } else if (selector > 9 || selector < 1) {
         message = "You're really funny! Now, please type a number BETWEEN 1 AND 9.";
-    } else if (selector < 1) {
-        message = "You're really funny! Now, please type a number BETWEEN 1 AND 9.";
+        ////        message = "You're really funny! Now, please type a number BETWEEN 1 AND 9.";
     } else {
         securityCheck = true;
     }
