@@ -39,7 +39,7 @@ if (selector == 1) {
 } else if (selector == 7) {
     powerToThousand();
 } else if (selector == 8) {
-    //game 8
+    fourDigitSum();
 } else if (selector == 9) {
     //game 9
 }
@@ -164,8 +164,6 @@ function powerToThousand() {
             powerNumbers.push(power);
 
         }
-
-
     }
 
     htmlElement.innerHTML = powerNumbers;
@@ -173,6 +171,17 @@ function powerToThousand() {
 }
 
 //Game 8: Asks for a 4 digit number and outputs the sum of the 4 digits.
+
+function fourDigitSum() {
+    const fourDigit = prompt("Please type a 4 digit number");
+
+    let digitSum = 0;
+    for (let i = 0; i < fourDigit.length; i++) {
+        digitSum += parseInt(fourDigit[i]);
+
+    }
+    htmlElement.innerHTML = digitSum;
+}
 
 //Game 9: outputs the sum and the average of the first 10 numbers.
 
