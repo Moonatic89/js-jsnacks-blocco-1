@@ -28,7 +28,7 @@ while (securityCheck != true) {
 if (selector == 1) {
     higherNumbers(); 1
 } else if (selector == 2) {
-    // game 2
+    longerWords();
 } else if (selector == 3) {
     // game 3
 } else if (selector == 4) {
@@ -57,17 +57,32 @@ function higherNumbers() {
                           [2/2]`);
 
     if (highNumber1 > highNumber2) {
-        htmlElement.innerHTML = `${highNumber1}(1st number) is higher than ${highNumber2}(2nd number)`
+        htmlElement.innerHTML = `${highNumber1}(1st number) is higher!`
     } else if (highNumber1 < highNumber2) {
-        htmlElement.innerHTML = `${highNumber2}(2nd number) is higher than ${highNumber1}(1st number)`
+        htmlElement.innerHTML = `${highNumber2}(2nd number) is higher!`
     } else {
         htmlElement.innerHTML = `${highNumber1}(1st number) and ${highNumber2}(2nd number) are equal!`
     }
 }
 
-
-
 //Game 2: User types 2 words with 2 prompts, then the software outputs the shortest, then the longest.
+
+function longerWords() {
+
+    const longWord1 = prompt(`Type a word 
+                          [1/2]`);
+    const longWord2 = prompt(`Type a second word 
+                          [2/2]`);
+
+    if (longWord1.length > longWord2.length) {
+        htmlElement.innerHTML = `${longWord2}(2nd word) is shorter than ${longWord1}(1st word)`
+    } else if (longWord1.length < longWord2.length) {
+        htmlElement.innerHTML = `${longWord1}(1st word) is shorter than ${longWord2}(2nd word)`
+    } else {
+        htmlElement.innerHTML = `${longWord1}(1st word) and ${longWord2}(2nd word) have the same length!`
+    }
+
+}
 
 //Game 3: The software asks for 10 numbers, then outputs the sum.
 
