@@ -4,7 +4,7 @@
 // Intro Variables
 
 let securityCheck = false;
-let warning;
+let message;
 let htmlElement = document.querySelector(".container");
 let selector = prompt(`Hi! Which "game" do you want to play? 
 [Select a number from 1 to 9]`);
@@ -16,9 +16,8 @@ let selector = prompt(`Hi! Which "game" do you want to play?
 checkForCorrectInput();
 
 while (securityCheck != true) {
-    console.log("repeat");
 
-    selector = prompt(`${warning} 
+    selector = prompt(`${message} 
      [Select a number from 1 to 9]`);
     checkForCorrectInput();
 
@@ -30,9 +29,9 @@ if (selector == 1) {
 } else if (selector == 2) {
     longerWords();
 } else if (selector == 3) {
-    // game 3
+    sumOfTen();
 } else if (selector == 4) {
-    //game 4
+    searchNameInList();
 } else if (selector == 5) {
     //game 5
 } else if (selector == 6) {
@@ -86,7 +85,32 @@ function longerWords() {
 
 //Game 3: The software asks for 10 numbers, then outputs the sum.
 
+function sumOfTen() {
+    let numbersToSum = 0;
+    let sum = 0;
+    for (let i = 0; i < 10; i++) {
+        numbersToSum = parseInt(prompt(`Insert a number to sum
+        [${i + 1}] of 10] `));
+        sum += numbersToSum;
+        htmlElement.innerHTML = `The sum of all the numbers is ${sum}!`
+    }
+}
+
 //Game 4: Asks the user its name and outputs if he can enter the great Gatsby party. (array)
+
+function searchNameInList() {
+    const allowed = ["pino", "lino", "gino", "rino", "mino"];
+    const userName = prompt("Please tell me your name before entering the GREAT GATSBY exclusive party:").toLowerCase();
+    message = "You are not allowed to enter this really, really exclusive party."
+    for (let i = 0; i < allowed.length; i++) {
+
+        if (userName == allowed[i]) {
+            message = "You are on the list! Please enter, and have fun!"
+        }
+        htmlElement.innerHTML = message;
+    }
+
+}
 
 //Game 5: Create an empty array, ask the user for 6 numbers, if it's odd add it to the array.
 
@@ -107,11 +131,11 @@ function longerWords() {
 function checkForCorrectInput() {
 
     if (isNaN(selector)) {
-        warning = "You're really funny! Now, please type a NUMBER between 1 and 9.";
+        message = "You're really funny! Now, please type a NUMBER between 1 and 9.";
     } else if (selector > 9) {
-        warning = "You're really funny! Now, please type a number BETWEEN 1 AND 9.";
+        message = "You're really funny! Now, please type a number BETWEEN 1 AND 9.";
     } else if (selector < 1) {
-        warning = "You're really funny! Now, please type a number BETWEEN 1 AND 9.";
+        message = "You're really funny! Now, please type a number BETWEEN 1 AND 9.";
     } else {
         securityCheck = true;
     }
