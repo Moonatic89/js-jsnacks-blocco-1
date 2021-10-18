@@ -136,6 +136,14 @@ function arrayOfOdds() {
 function powerCube() {
 
     const nNumber = prompt("Type a number: I will print the cube of every number from 1 to the one of your choice.")
+    const powerNumbers = [];
+    let i = 0;
+    while (i < nNumber) {
+        powerNumbers.push(((i + 1) * (i + 1)) * (i + 1));
+
+        i++;
+    }
+    htmlElement.innerHTML = powerNumbers;
 
 }
 
