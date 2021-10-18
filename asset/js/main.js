@@ -37,7 +37,7 @@ if (selector == 1) {
 } else if (selector == 6) {
     powerCube();
 } else if (selector == 7) {
-    //game 7
+    powerToThousand();
 } else if (selector == 8) {
     //game 8
 } else if (selector == 9) {
@@ -148,6 +148,29 @@ function powerCube() {
 }
 
 //Game 7: Outputs power of 2 until 1000.
+
+function powerToThousand() {
+
+    const powerNumbers = [];
+
+    let j = 2;
+    while (j < 1000) {
+
+        let power = (j * 2);
+
+        j = power;
+
+        if (j < 1000) {
+            powerNumbers.push(power);
+
+        }
+
+
+    }
+
+    htmlElement.innerHTML = powerNumbers;
+
+}
 
 //Game 8: Asks for a 4 digit number and outputs the sum of the 4 digits.
 
